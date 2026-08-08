@@ -1,0 +1,95 @@
+<form class="bid-crew-sheet" data-crew-key="{{bidCrew.crewKey}}" autocomplete="off">
+  <div class="bid-crew-grid">
+    <section class="bid-crew-column bid-crew-left">
+      <header class="bid-crew-brand"><span>BLADES IN THE DARK</span><b>GANGBOGEN</b></header>
+      <div class="bid-crew-identity">
+        <label><b>NAME</b><input name="name" value="{{name}}"></label>
+        <label title="Standardoptionen: brutal, diskret, ehrenhaft, ehrgeizig, gerissen, professionell, seltsam, waghalsig."><b>RUF</b><input value="{{bidCrew.reputationName}}" data-bid-crew-action="reputation-name" placeholder="Ruf eintragen"></label>
+        <label class="bid-crew-wide"><b>VERSTECK</b><input name="system.lair" value="{{system.lair}}"></label>
+      </div>
+
+      <div class="bid-crew-status-row">
+        <div class="bid-crew-rep"><h2>RESPEKT</h2><div class="bid-crew-teeth">{{#each bidCrew.reputation}}<button type="button" class="{{#if active}}active{{/if}} {{#if territory}}territory{{/if}}" data-bid-crew-action="track" data-path="system.reputation" data-value="{{value}}" {{#if territory}}disabled title="Entfällt durch Gebiet"{{/if}}></button>{{/each}}</div></div>
+        <div class="bid-crew-hold"><h2>GRIFF</h2><button type="button" class="{{#if (eq bidCrew.hold 'weak')}}active{{/if}}" data-bid-crew-action="hold" data-value="weak">SCHWACH</button><button type="button" class="{{#if (eq bidCrew.hold 'strong')}}active{{/if}}" data-bid-crew-action="hold" data-value="strong">FEST</button></div>
+        <div class="bid-crew-tier"><h2>STUFE</h2><div class="bid-crew-dots">{{#each bidCrew.tier}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-crew-action="track" data-path="system.tier" data-value="{{value}}"></button>{{/each}}</div></div>
+      </div>
+
+      <section class="bid-crew-claims">
+        {{#each bidCrew.claims}}
+          <article class="item {{#if active}}active{{/if}}" data-item-id="{{../bidCrew.crewTypeId}}">
+            <button type="button" class="turf-select" data-item-id="{{itemId}}" data-turf-id="{{id}}" data-turf-status="{{active}}" title="Revier umschalten"></button>
+            <strong>{{name}}</strong><span>{{description}}</span>
+          </article>
+        {{else}}<p class="bid-crew-empty">Gangbuch auswählen, um die Reviere anzuzeigen.</p>{{/each}}
+      </section>
+
+      <div class="bid-crew-bottom-tracks">
+        <div class="bid-crew-heat-block"><h2>VERDACHT</h2><div class="bid-crew-teeth">{{#each bidCrew.heat}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-crew-action="track" data-path="system.heat" data-value="{{value}}"></button>{{/each}}</div></div>
+        <div class="bid-crew-wanted-block"><h2>FAHNDUNGSGRAD</h2><div class="bid-crew-wanted">{{#each bidCrew.wanted}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-crew-action="track" data-path="system.wanted" data-value="{{value}}"></button>{{/each}}</div></div>
+        <div class="bid-crew-money-block">
+          <div class="bid-crew-coins-block"><h2>MÜNZEN</h2><div class="bid-crew-boxes">{{#each bidCrew.coins}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-crew-action="track" data-path="system.coins.value" data-value="{{value}}"></button>{{/each}}</div></div>
+          <div class="bid-crew-vault-block"><h2>SPEICHER</h2><div class="bid-crew-boxes">{{#each bidCrew.vault}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-crew-action="track" data-path="system.vault.value" data-value="{{value}}"></button>{{/each}}</div></div>
+          <p>Bei Gang-Aufstieg erhält jeder SC Vermögen = Stufe +2.</p>
+        </div>
+      </div>
+      <textarea class="bid-crew-notes" name="system.description" aria-label="Notizen">{{system.description}}</textarea>
+    </section>
+
+    <section class="bid-crew-column bid-crew-center">
+      <header class="bid-crew-playbook crew-class" data-distinct="true" data-item-type="crew_type" title="Gangbuch auswählen">
+        <span>{{bidCrew.crewTypeName}}</span><small>{{bidCrew.crewTypeDescription}}</small>
+      </header>
+
+      <section class="bid-crew-abilities">
+        <h2>SONDERFÄHIGKEITEN <button type="button" class="item-add-popup" data-item-type="crew_ability">＋</button></h2>
+        {{#each bidCrew.abilities}}<article><button type="button" class="bid-crew-ability-mark {{#if selected}}active{{/if}}" data-bid-crew-action="ability-toggle" data-key="{{key}}"></button><p><strong>{{name}}:</strong> {{descriptionText}}</p></article>{{else}}<p class="bid-crew-empty">Gangbuch auswählen, um Sonderfähigkeiten anzuzeigen.</p>{{/each}}
+      </section>
+
+      <section class="bid-crew-xp">
+        <h2>GANG-ERFAHRUNGSPUNKTE</h2>
+        <div class="bid-crew-teeth">{{#each bidCrew.experience}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-crew-action="track" data-path="system.experience" data-value="{{value}}"></button>{{/each}}</div>
+        <p>Tragt am Ende der Sitzung für jeden Auslöser 1 EP ein. Tragt 2 EP ein, wenn er mehrfach vorgekommen ist.</p>
+        {{#each bidCrew.xpClues}}<p>◆ {{this}}</p>{{/each}}
+      </section>
+
+      <div class="bid-crew-center-bottom">
+        <section><h2>KONTAKTE <button type="button" data-bid-crew-action="contacts-edit" title="Kontakte bearbeiten"><i class="fa-solid fa-pen-to-square"></i></button></h2>{{#each bidCrew.contacts}}<div class="bid-crew-contact"><span class="bid-crew-standing bid-standing-{{standing}}"><button type="button" class="friend" data-bid-crew-action="contact-standing" data-standing="friend" data-key="{{key}}">△</button><button type="button" class="rival" data-bid-crew-action="contact-standing" data-standing="rival" data-key="{{key}}">▽</button></span><span><strong>{{name}}</strong>, {{description_short}}</span></div>{{else}}<p class="bid-crew-empty">Mit dem Bearbeiten-Symbol Kontakte hinzufügen.</p>{{/each}}</section>
+        <section><h2>GANG-VERBESSERUNGEN</h2>{{#each bidCrew.upgrades}}<div class="bid-crew-catalog-upgrade {{#if informational}}informational{{/if}}" title="{{tooltip}}">{{#unless informational}}<button type="button" class="bid-crew-upgrade-boxes {{#if connected}}connected{{/if}} {{#if selected}}active{{/if}}" data-bid-crew-action="crew-upgrade-toggle" data-key="{{key}}">{{#each boxList}}<i></i>{{/each}}</button>{{/unless}}<span><strong>{{name}}</strong>{{#if descriptionText}} ({{descriptionText}}){{/if}}</span></div>{{else}}<p class="bid-crew-empty">Gangbuch auswählen, um Verbesserungen anzuzeigen.</p>{{/each}}</section>
+      </div>
+      <footer class="bid-crew-hunting-ground">
+        <div><b>{{bidCrew.footer.label}}:</b> <span>{{bidCrew.footer.examples}}</span></div>
+        <textarea rows="3" data-bid-crew-action="hunting-ground" placeholder="{{bidCrew.footer.label}} beschreiben">{{bidCrew.footer.value}}</textarea>
+      </footer>
+    </section>
+
+    <aside class="bid-crew-column bid-crew-right">
+      <section class="bid-crew-cohorts"><h2>KOMPLIZEN <button type="button" class="add-item" data-item-type="cohort">＋</button></h2>
+        {{#each bidCrew.cohorts}}
+          <article class="item" data-item-id="{{_id}}">
+            <header>
+              <strong>{{name}}</strong>
+              <span class="bid-crew-cohort-kind">{{typeLabel}}{{#if elite}} · ELITE{{/if}}</span>
+              <button type="button" class="item-sheet-open" title="Komplizen bearbeiten"><i class="fa-solid fa-pen-to-square"></i></button>
+            </header>
+            <div class="bid-crew-cohort-summary">
+              <span><b>TYP</b> {{#if subtype}}{{subtype}}{{else}}-{{/if}}</span>
+              <span><b>QUALITÄT</b> {{quality}}</span>
+              <span><b>UMFANG</b> {{scale}}</span>
+              <span title="{{harmTitle}}"><b>ZUSTAND</b> {{harmLabel}}</span>
+              <span><b>RÜSTUNG</b> {{#if armor}}Ja{{else}}Nein{{/if}}</span>
+              {{#if isGang}}<span title="Elite-Banden erhalten +1W auf Würfe ihres Bandentyps."><b>ELITE</b> {{#if elite}}Ja (+1W){{else}}Nein{{/if}}</span>{{/if}}
+            </div>
+            <p>{{descriptionText}}</p>
+            <div class="bid-crew-cohort-traits">{{#if edges}}<span title="{{edgesTitle}}"><b>STÄRKEN:</b> {{edges}}</span>{{/if}}{{#if flaws}}<span title="{{flawsTitle}}"><b>SCHWÄCHEN:</b> {{flaws}}</span>{{/if}}</div>
+          </article>
+        {{else}}<p class="bid-crew-empty">Komplizen mit ＋ hinzufügen.</p>{{/each}}
+      </section>
+      <section class="bid-crew-upgrade-summary">
+        <div><h3>VERSTECK</h3>{{#each bidCrew.generalUpgrades.hideout}}<div class="bid-crew-general-upgrade {{#if square}}square{{/if}}" title="{{description}}"><button type="button" class="bid-crew-upgrade-boxes {{#if connected}}connected{{/if}} {{#if square}}square{{/if}} {{#if active}}active{{/if}}" data-bid-crew-action="upgrade-toggle" data-key="{{key}}">{{#each boxList}}<i></i>{{/each}}</button><span>{{label}}</span></div>{{/each}}</div>
+        <div><h3>QUALITÄT</h3>{{#each bidCrew.generalUpgrades.quality}}<div class="bid-crew-general-upgrade {{#if square}}square{{/if}}" title="{{description}}"><button type="button" class="bid-crew-upgrade-boxes {{#if connected}}connected{{/if}} {{#if square}}square{{/if}} {{#if active}}active{{/if}}" data-bid-crew-action="upgrade-toggle" data-key="{{key}}">{{#each boxList}}<i></i>{{/each}}</button><span>{{label}}</span></div>{{/each}}</div>
+        <div><h3>TRAINING</h3>{{#each bidCrew.generalUpgrades.training}}<div class="bid-crew-general-upgrade {{#if square}}square{{/if}}" title="{{description}}"><button type="button" class="bid-crew-upgrade-boxes {{#if connected}}connected{{/if}} {{#if square}}square{{/if}} {{#if active}}active{{/if}}" data-bid-crew-action="upgrade-toggle" data-key="{{key}}">{{#each boxList}}<i></i>{{/each}}</button><span>{{label}}</span></div>{{/each}}</div>
+        <div><h3>KOMPLIZEN</h3><p>Verbesserungskosten</p><p>Neue Komplizen: 2</p><p>Weiterer Typ: 2</p></div>
+      </section>
+    </aside>
+  </div>
+</form>

@@ -1,0 +1,51 @@
+name: Foundry-Release erstellen
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Release-ZIP erstellen
+        run: |
+          zip -r BIDGermanSheet.zip . \
+            -x ".git/*" \
+               ".github/*" \
+               "tmp/*" \
+               "*.zip"
+
+      - name: Version und Manifest prüfen
+        shell: bash
+        run: |
+          MODULE_VERSION="$(jq -r '.version' module.json)"
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+
+          if [ "$MODULE_VERSION" != "$TAG_VERSION" ]; then
+            echo "Fehler: module.json hat Version $MODULE_VERSION, der Tag lautet $GITHUB_REF_NAME."
+            exit 1
+          fi
+
+          jq -e '
+            .manifest == "https://github.com/Sphinx2k/BIDGermanSheet/releases/latest/download/module.json" and
+            .download == "https://github.com/Sphinx2k/BIDGermanSheet/releases/latest/download/BIDGermanSheet.zip"
+          ' module.json > /dev/null
+
+      - name: GitHub-Release veröffentlichen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            BIDGermanSheet.zip \
+            module.json \
+            --title "${GITHUB_REF_NAME}" \
+            --generate-notes

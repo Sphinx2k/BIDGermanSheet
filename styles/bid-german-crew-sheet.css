@@ -1,0 +1,199 @@
+.bid-paper-crew-sheet .window-content { padding: 0; overflow: hidden; background: #eee; }
+.bid-paper-crew-sheet .bid-crew-sheet { height: 100%; overflow: auto; color: #242223; background: #f8f8f6; font: 14px/1.15 "Crimson Text", Georgia, serif; }
+.bid-paper-crew-sheet .bid-crew-sheet * { box-sizing: border-box; }
+.bid-paper-crew-sheet button { border: 0; border-radius: 0; box-shadow: none; }
+.bid-paper-crew-sheet input, .bid-paper-crew-sheet textarea { border: 0; border-radius: 0; box-shadow: none; background: transparent; font: inherit; }
+.bid-paper-crew-sheet h2, .bid-paper-crew-sheet h3 { margin: 0; font-family: "Kirsty", Impact, sans-serif; text-transform: uppercase; }
+.bid-paper-crew-sheet .bid-crew-grid { display: grid; grid-template-columns: minmax(0, 1.42fr) minmax(0, 1fr) minmax(290px, .6fr); width: 100%; min-width: 1260px; min-height: 100%; }
+.bid-paper-crew-sheet .bid-crew-column { display: block; min-width: 0; overflow: hidden; border-right: 1px solid #888; }
+.bid-paper-crew-sheet .bid-crew-column > * { min-width: 0; max-width: 100%; margin-right: 0; margin-left: 0; }
+.bid-paper-crew-sheet .bid-crew-left { padding: 18px; }
+.bid-paper-crew-sheet .bid-crew-center { background: #d9dadb; }
+.bid-paper-crew-sheet .bid-crew-right { display: grid; grid-template-rows: 685px auto; align-content: start; background: #fafafa; }
+.bid-paper-crew-sheet .bid-crew-brand { display: flex; align-items: center; justify-content: space-between; border-top: 10px solid #242223; font: 42px/1 "Kirsty", Impact, sans-serif; }
+.bid-paper-crew-sheet .bid-crew-brand b { color: #999; font-size: 38px; }
+.bid-paper-crew-sheet .bid-crew-identity { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 45px; margin-top: 35px; }
+.bid-paper-crew-sheet .bid-crew-identity label { display: flex; flex-direction: column; border-bottom: 1px solid #999; }
+.bid-paper-crew-sheet .bid-crew-identity b { font-family: "Kirsty", Impact, sans-serif; }
+.bid-paper-crew-sheet .bid-crew-identity input { height: 28px; }
+.bid-paper-crew-sheet .bid-crew-wide { grid-column: 1 / -1; }
+.bid-paper-crew-sheet .bid-crew-status-row { display: flex; align-items: flex-start; margin-top: 14px; }
+.bid-paper-crew-sheet .bid-crew-status-row h2, .bid-paper-crew-sheet .bid-crew-bottom-tracks h2, .bid-paper-crew-sheet .bid-crew-center h2, .bid-paper-crew-sheet .bid-crew-right h2 { min-height: 22px; padding: 2px 5px; color: #fff; background: #242223; font-size: 16px; }
+.bid-paper-crew-sheet .bid-crew-rep { flex: 1; margin-right: 10px; }
+.bid-paper-crew-sheet .bid-crew-hold { display: flex; align-items: center; }
+.bid-paper-crew-sheet .bid-crew-hold h2 { display: flex; height: 22px; min-height: 22px; align-items: center; margin-right: 3px; padding: 0 5px; line-height: 22px; }
+.bid-paper-crew-sheet .bid-crew-hold button { display: flex; height: 22px; min-height: 22px; align-items: center; justify-content: center; margin: 0 1px; padding: 0 7px; line-height: 22px; background: #ddd; font-weight: bold; }
+.bid-paper-crew-sheet .bid-crew-hold button.active { color: #fff; background: #242223; }
+.bid-paper-crew-sheet .bid-crew-tier { display: flex; align-items: flex-start; margin-left: 10px; }
+.bid-paper-crew-sheet .bid-crew-teeth { display: flex; height: 30px; }
+.bid-paper-crew-sheet .bid-crew-teeth button { width: 22px; height: 29px; margin: 0 1px 0 0; padding: 0; clip-path: polygon(0 0,100% 0,100% 70%,50% 100%,0 70%); background: #d2d3d4; }
+.bid-paper-crew-sheet .bid-crew-teeth button.active { background: #242223; }
+.bid-paper-crew-sheet .bid-crew-dots, .bid-paper-crew-sheet .bid-crew-wanted, .bid-paper-crew-sheet .bid-crew-boxes { display: flex; gap: 5px; padding: 4px 7px; }
+.bid-paper-crew-sheet .bid-crew-dots button { flex: 0 0 17px; width: 17px; height: 17px; margin: 0; padding: 0; border: 2px solid #aaa; border-radius: 50%; background: #fff; }
+.bid-paper-crew-sheet .bid-crew-dots button.active { background: #242223; }
+.bid-paper-crew-sheet .bid-crew-claims { container-type: inline-size; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: start; gap: 22px 18px; min-height: 0; padding: 20px 0; overflow: hidden; background: linear-gradient(#d9dadb,#d9dadb) 10% 20px / 10px calc(100% - 40px) no-repeat, linear-gradient(#d9dadb,#d9dadb) 30% 20px / 10px calc(100% - 40px) no-repeat, linear-gradient(#d9dadb,#d9dadb) 50% 20px / 10px calc(100% - 40px) no-repeat, linear-gradient(#d9dadb,#d9dadb) 70% 20px / 10px calc(100% - 40px) no-repeat, linear-gradient(#d9dadb,#d9dadb) 90% 20px / 10px calc(100% - 40px) no-repeat, linear-gradient(to right,#d9dadb,#d9dadb) 10% 50% / 80% 10px no-repeat; }
+.bid-paper-crew-sheet .bid-crew-claims article { position: relative; display: flex; width: 100%; min-width: 0; min-height: 0; aspect-ratio: 1 / 1; flex-direction: column; place-content: center; padding: clamp(6px, 1.5cqw, 12px); overflow: hidden; background: #d9dadb; text-align: center; }
+.bid-paper-crew-sheet .bid-crew-claims article.active { color: #fff; background: #777; }
+.bid-paper-crew-sheet .bid-crew-claims article > button { position: absolute; top: 0; left: 0; width: 15px; height: 15px; margin: 0; border: 2px solid #999; background: #fff; }
+.bid-paper-crew-sheet .bid-crew-claims article.active > button { background: #242223; }
+.bid-paper-crew-sheet .bid-crew-claims strong { display: block; width: 100%; max-width: 100%; overflow: hidden; font: clamp(11px, 2.25cqw, 18px)/1 "Kirsty", Impact, sans-serif; text-transform: uppercase; white-space: nowrap; }
+.bid-paper-crew-sheet .bid-crew-claims span { min-width: 0; max-width: 100%; margin-top: clamp(3px, .9cqw, 8px); font-size: clamp(9px, 1.7cqw, 13px); overflow-wrap: anywhere; }
+.bid-paper-crew-sheet .bid-crew-claims > .bid-crew-empty { grid-column: 1 / -1; align-self: start; margin: 8px 10px; }
+.bid-paper-crew-sheet .bid-crew-bottom-tracks { display: grid; grid-template-columns: minmax(160px, 1fr) auto 218px; align-items: start; gap: 0 8px; margin-top: 14px; }
+.bid-paper-crew-sheet .bid-crew-bottom-tracks > div { min-width: 0; }
+.bid-paper-crew-sheet .bid-crew-bottom-tracks .bid-crew-wanted-block h2, .bid-paper-crew-sheet .bid-crew-bottom-tracks .bid-crew-vault-block h2 { color: #242223; background: #c9cacc; }
+.bid-paper-crew-sheet .bid-crew-bottom-tracks .bid-crew-teeth { overflow: hidden; }
+.bid-paper-crew-sheet .bid-crew-wanted { display: flex; height: 30px; gap: 1px; padding: 0; }
+.bid-paper-crew-sheet .bid-crew-wanted button { width: 22px; height: 29px; margin: 0; padding: 0; border: 0; clip-path: polygon(0 0,100% 0,100% 70%,50% 100%,0 70%); background: #d2d3d4; }
+.bid-paper-crew-sheet .bid-crew-wanted button.active { background: #242223; }
+.bid-paper-crew-sheet .bid-crew-rep .bid-crew-teeth button.territory { background: #8b8b8b; cursor: default; opacity: 1; }
+.bid-paper-crew-sheet .bid-crew-money-block { display: grid; grid-template-columns: 54px 164px; width: 218px; min-width: 0; overflow: hidden; }
+.bid-paper-crew-sheet .bid-crew-money-block > div { min-width: 0; }
+.bid-paper-crew-sheet .bid-crew-money-block h2 { height: 18px; min-height: 18px; padding: 1px 4px; font-size: 13px; line-height: 16px; }
+.bid-paper-crew-sheet .bid-crew-boxes { display: flex; gap: 2px; height: 16px; padding: 3px 3px; }
+.bid-paper-crew-sheet .bid-crew-boxes button { flex: 0 0 10px; width: 10px; height: 10px; margin: 0; padding: 0; border: 1px solid #777; border-radius: 0; background: #fff; }
+.bid-paper-crew-sheet .bid-crew-boxes button.active { background: #242223; }
+.bid-paper-crew-sheet .bid-crew-vault-block { overflow: hidden; }
+.bid-paper-crew-sheet .bid-crew-vault-block .bid-crew-boxes { padding-left: 5px; overflow: hidden; border-left: 1px solid #777; }
+.bid-paper-crew-sheet .bid-crew-vault-block .bid-crew-boxes button:nth-child(5) { position: relative; margin-left: 5px; }
+.bid-paper-crew-sheet .bid-crew-vault-block .bid-crew-boxes button:nth-child(5)::before { content: ""; position: absolute; top: -1px; bottom: -1px; left: -4px; border-left: 1px solid #777; }
+.bid-paper-crew-sheet .bid-crew-money-block > p { grid-column: 1 / -1; margin: 0; font-size: 10px; line-height: 13px; font-style: italic; white-space: nowrap; }
+.bid-paper-crew-sheet .bid-crew-notes { width: 100%; min-height: 210px; margin-top: 30px; resize: none; background: repeating-linear-gradient(transparent 0 40px,#bbb 41px); }
+.bid-paper-crew-sheet .bid-crew-playbook { display: grid; grid-template-columns: 1fr 150px; height: 66px; min-height: 66px; padding: 6px 15px; cursor: pointer; }
+.bid-paper-crew-sheet .bid-crew-playbook > span { overflow: hidden; font: 46px/1 "Kirsty", Impact, sans-serif; text-transform: uppercase; white-space: nowrap; text-overflow: ellipsis; }
+.bid-paper-crew-sheet .bid-crew-playbook small { align-self: center; color: #666; font-weight: bold; text-align: right; }
+.bid-paper-crew-sheet .bid-crew-abilities { display: block; width: 100%; height: 434px; min-height: 0; overflow-x: hidden; overflow-y: auto; border-bottom: 1px solid #888; }
+.bid-paper-crew-sheet .bid-crew-abilities h2, .bid-paper-crew-sheet .bid-crew-xp h2, .bid-paper-crew-sheet .bid-crew-center-bottom h2, .bid-paper-crew-sheet .bid-crew-cohorts h2 { display: flex; justify-content: space-between; }
+.bid-paper-crew-sheet h2 button { width: auto; margin: 0; padding: 0 5px; color: inherit; background: transparent; }
+.bid-paper-crew-sheet .bid-crew-abilities article { display: flex; gap: 5px; padding: 2px 9px; }
+.bid-paper-crew-sheet .bid-crew-abilities article p { margin: 0 8px; line-height: 1.12; }
+.bid-paper-crew-sheet .bid-crew-abilities article:last-of-type { margin-bottom: 4px; }
+.bid-paper-crew-sheet .bid-crew-ability-mark { flex: 0 0 14px; width: 14px; height: 14px; margin: 2px 0 0; padding: 0; border: 2px solid #aaa; border-radius: 50%; background: #fff; }
+.bid-paper-crew-sheet .bid-crew-ability-mark.active { border-color: #242223; background: #242223; }
+.bid-paper-crew-sheet .bid-crew-abilities p, .bid-paper-crew-sheet .bid-crew-xp p, .bid-paper-crew-sheet .bid-crew-center-bottom p { margin: 3px 8px; }
+.bid-paper-crew-sheet .bid-crew-xp { display: block; width: 100%; height: 175px; min-height: 0; overflow-x: hidden; overflow-y: auto; border-bottom: 1px solid #888; }
+.bid-paper-crew-sheet .bid-crew-xp h2 { height: 22px; min-height: 22px; align-items: center; padding-top: 0; padding-bottom: 0; line-height: 22px; }
+.bid-paper-crew-sheet .bid-crew-xp .bid-crew-teeth { float: right; margin-top: -22px; }
+.bid-paper-crew-sheet .bid-crew-xp .bid-crew-teeth button { position: relative; border: 0; background: #242223; }
+.bid-paper-crew-sheet .bid-crew-xp .bid-crew-teeth button::after { content: ""; position: absolute; inset: 1px; clip-path: polygon(0 0,100% 0,100% 70%,50% 100%,0 70%); background: #f7f7f5; }
+.bid-paper-crew-sheet .bid-crew-xp .bid-crew-teeth button.active { background: #242223; }
+.bid-paper-crew-sheet .bid-crew-xp .bid-crew-teeth button.active::after { background: #8b1818; }
+.bid-paper-crew-sheet .bid-crew-center-bottom { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; height: 230px; min-height: 0; overflow: hidden; }
+.bid-paper-crew-sheet .bid-crew-center-bottom section { display: block; min-width: 0; overflow-y: auto; border-right: 1px solid #aaa; }
+.bid-paper-crew-sheet .bid-crew-center-bottom h2 { min-height: 22px; color: #242223; background: #bfc0c1; }
+.bid-paper-crew-sheet .bid-crew-center-bottom h2 button { width: 20px; min-width: 20px; height: 18px; min-height: 0; margin: 0; padding: 0; align-self: center; font-size: 12px; line-height: 18px; }
+.bid-paper-crew-sheet .bid-crew-contact { display: grid; grid-template-columns: 30px minmax(0, 1fr); align-items: center; height: 23px; min-height: 23px; padding: 0 5px; line-height: 21px; }
+.bid-paper-crew-sheet .bid-crew-standing { display: flex; width: 28px; height: 20px; align-items: center; }
+.bid-paper-crew-sheet .bid-crew-standing button { flex: 0 0 14px; width: 14px; min-width: 14px; height: 20px; min-height: 0; margin: 0; padding: 0; color: #999; background: transparent; font-size: 0; line-height: 18px; }
+.bid-paper-crew-sheet .bid-crew-standing button::before { display: block; font: 14px/18px Georgia, serif; }
+.bid-paper-crew-sheet .bid-crew-standing .friend::before { content: "△"; }
+.bid-paper-crew-sheet .bid-crew-standing .rival::before { content: "▽"; }
+.bid-paper-crew-sheet .bid-crew-standing.bid-standing-friend .friend::before { content: "▲"; color: #242223; }
+.bid-paper-crew-sheet .bid-crew-standing.bid-standing-rival .rival::before { content: "▼"; color: #242223; }
+.bid-paper-crew-sheet .bid-crew-catalog-upgrade { display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: start; min-height: 28px; gap: 4px; padding: 2px 6px; font-size: 12px; }
+.bid-paper-crew-sheet .bid-crew-catalog-upgrade.informational { display: block; padding-left: 6px; }
+.bid-paper-crew-sheet .bid-crew-catalog-upgrade .bid-crew-upgrade-boxes { margin-top: 1px; }
+.bid-paper-crew-sheet .bid-crew-center footer { min-height: 45px; padding: 10px; border-top: 1px solid #888; text-transform: uppercase; }
+.bid-paper-crew-sheet .bid-crew-center footer.bid-crew-hunting-ground { display: grid; gap: 4px; min-height: 92px; padding: 7px 10px; }
+.bid-paper-crew-sheet .bid-crew-hunting-ground > div { min-width: 0; font-size: 12px; white-space: normal; }
+.bid-paper-crew-sheet .bid-crew-hunting-ground > div span { margin-left: 5px; font-size: 11px; }
+.bid-paper-crew-sheet .bid-crew-hunting-ground textarea { width: 100%; min-height: 54px; padding: 2px 4px; border: 0; resize: none; background: repeating-linear-gradient(transparent 0 17px,#aaa 18px); line-height: 18px; text-transform: none; }
+.bid-paper-crew-sheet .bid-crew-hunting-ground textarea:focus { background-color: rgba(255,255,255,.4); outline: 0; }
+.bid-paper-crew-sheet .bid-crew-cohorts { display: block; min-height: 0; overflow-y: auto; }
+.bid-paper-crew-sheet .bid-crew-cohorts article { display: grid; grid-template-rows: 25px auto 76px auto; height: 188px; min-height: 188px; overflow: hidden; border-bottom: 1px solid #aaa; }
+.bid-paper-crew-sheet .bid-crew-cohorts article header { display: grid; grid-template-columns: minmax(0, 1fr) auto 24px; align-items: center; gap: 6px; padding: 2px 5px; color: #fff; background: #555; }
+.bid-paper-crew-sheet .bid-crew-cohorts article header > strong { overflow: hidden; font-family: "Kirsty", Impact, sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+.bid-paper-crew-sheet .bid-crew-cohorts article header > button { display: grid; width: 22px; height: 20px; margin: 0; padding: 0; place-items: center; border: 1px solid #fff; color: #242223; background: #f3f2ee; font-size: 12px; line-height: 1; cursor: pointer; }
+.bid-paper-crew-sheet .bid-crew-cohorts article header > button:hover,
+.bid-paper-crew-sheet .bid-crew-cohorts article header > button:focus-visible { border-color: #d69a3a; color: #fff; background: #8b1818; outline: 1px solid #fff; }
+.bid-paper-crew-sheet .bid-crew-cohort-kind { padding: 1px 5px; color: #242223; background: #eee; font-size: 10px; font-weight: bold; text-transform: uppercase; }
+.bid-paper-crew-sheet .bid-crew-cohort-summary { display: flex; min-width: 0; flex-wrap: wrap; align-content: center; gap: 2px 10px; padding: 4px 6px; border-bottom: 1px solid #aaa; background: #f0f0ee; font-size: 12px; line-height: 1.1; text-transform: uppercase; }
+.bid-paper-crew-sheet .bid-crew-cohort-summary span { white-space: nowrap; }
+.bid-paper-crew-sheet .bid-crew-cohort-summary b { font-family: "Kirsty", Impact, sans-serif; }
+.bid-paper-crew-sheet .bid-crew-cohorts article > p { height: 76px; margin: 0; padding: 4px 6px; overflow: hidden; background: repeating-linear-gradient(transparent 0 18px,#ccc 19px); font-size: 13px; line-height: 16.5px; white-space: pre-wrap; }
+.bid-paper-crew-sheet .bid-crew-cohort-traits { display: flex; min-height: 20px; flex-direction: column; padding: 1px 6px; overflow: hidden; font-size: 10px; }
+.bid-paper-crew-sheet .bid-crew-upgrade-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; min-height: 300px; padding: 9px; background: #d9dadb; }
+.bid-paper-crew-sheet .bid-crew-upgrade-summary h3 { padding-bottom: 2px; border-bottom: 1px solid #777; color: #242223; font-size: 14px; }
+.bid-paper-crew-sheet .bid-crew-upgrade-summary p { margin: 4px 0; }
+.bid-paper-crew-sheet .bid-crew-general-upgrade { display: grid; grid-template-columns: 34px minmax(0, 1fr); align-items: center; min-height: 23px; gap: 4px; font-size: 12px; }
+.bid-paper-crew-sheet .bid-crew-upgrade-summary > div:nth-child(2) .bid-crew-general-upgrade { grid-template-columns: 17px minmax(0, 1fr); }
+.bid-paper-crew-sheet .bid-crew-upgrade-boxes { position: relative; display: flex; justify-self: start; align-items: center; gap: 4px; width: max-content; min-width: 0; height: 17px; margin: 0; padding: 1px; background: transparent; }
+.bid-paper-crew-sheet .bid-crew-upgrade-boxes.connected::before { content: ""; position: absolute; top: calc(50% - 1px); right: 6px; left: 6px; height: 2px; background: #242223; }
+.bid-paper-crew-sheet .bid-crew-upgrade-boxes i { position: relative; z-index: 1; display: block; flex: 0 0 13px; width: 13px; height: 13px; aspect-ratio: 1 / 1; border: 1px solid #242223; background: #fff; }
+.bid-paper-crew-sheet .bid-crew-upgrade-boxes.active i { background: #242223; }
+.bid-paper-crew-sheet .bid-crew-general-upgrade.square { min-height: 36px; }
+.bid-paper-crew-sheet .bid-crew-upgrade-boxes.square { display: grid; grid-template-columns: repeat(2, 13px); grid-template-rows: repeat(2, 13px); width: 32px; height: 32px; gap: 4px; }
+.bid-paper-crew-sheet .bid-crew-upgrade-boxes.square::before { top: 7px; right: 7px; bottom: 7px; left: 7px; height: auto; border: 2px solid #242223; background: transparent; }
+.bid-paper-crew-sheet .bid-crew-upgrade-boxes.square::after { content: none; }
+.bid-paper-crew-sheet .bid-crew-general-upgrade span { min-width: 0; line-height: 1.05; white-space: normal; }
+.bid-paper-crew-sheet .bid-crew-empty { margin: 10px; color: #777; font-style: italic; }
+
+.bid-crew-type-dialog { display: grid; gap: 5px; padding: 7px; color: #242223 !important; background: #e7e6e2; }
+.bid-crew-type-dialog h3 { margin: -7px -7px 3px; padding: 6px 9px; color: #fff; background: #242223; font-family: "Kirsty", Impact, sans-serif; text-transform: uppercase; }
+.bid-crew-type-choice { position: relative; display: grid; grid-template-columns: 22px minmax(0, 1fr); align-items: center; gap: 7px; min-height: 47px; margin: 0; padding: 6px; border: 1px solid #aaa; color: #242223 !important; background: #f7f7f5; cursor: pointer; }
+.bid-crew-type-choice:hover { border-color: #242223; background: #deddd9; }
+.bid-crew-type-choice input[type="radio"] { position: absolute !important; width: 1px !important; height: 1px !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; border: 0 !important; opacity: 0 !important; pointer-events: none; }
+.bid-crew-type-marker { display: block; width: 18px; height: 18px; border: 2px solid #242223; border-radius: 50%; background: #fff; }
+.bid-crew-type-choice input[type="radio"]:checked + .bid-crew-type-marker { border: 4px solid #fff; outline: 2px solid #242223; background: #242223; }
+.bid-crew-type-choice input[type="radio"]:focus-visible + .bid-crew-type-marker { outline: 2px solid #8b1818; outline-offset: 2px; }
+.bid-crew-type-choice span { display: flex; min-width: 0; flex-direction: column; }
+.bid-crew-type-choice strong { color: #242223 !important; font: 17px/1 "Kirsty", Impact, sans-serif; text-transform: uppercase; }
+.bid-crew-type-choice small { margin-top: 4px; overflow: hidden; color: #3d3b3b !important; font: 12px/1.1 "Crimson Text", Georgia, serif; text-overflow: ellipsis; white-space: nowrap; }
+
+.application:has(.bid-cohort-editor) .window-content, dialog:has(.bid-cohort-editor), dialog:has(.bid-cohort-editor) .dialog-content { color: #242223 !important; background: #e7e6e2 !important; background-image: none !important; }
+.bid-cohort-editor { display: grid; width: 520px; max-width: 100%; max-height: calc(100vh - 150px); gap: 6px; padding: 8px 12px; overflow-y: auto; color: #242223 !important; background: #e7e6e2 !important; background-image: none !important; opacity: 1; font: 14px/1.2 "Crimson Text", Georgia, serif; }
+.bid-cohort-editor label, .bid-cohort-editor b, .bid-cohort-editor span { color: #242223 !important; }
+.bid-cohort-editor fieldset { min-width: 0; margin: 0; padding: 8px 10px 10px; border: 1px solid #8d8b88; border-radius: 0 !important; color: #242223 !important; background: #f7f7f5 !important; background-image: none !important; }
+.bid-cohort-editor legend { padding: 1px 7px; color: #fff; background: #242223; font-family: "Kirsty", Impact, sans-serif; text-transform: uppercase; }
+.bid-cohort-editor label { display: flex; align-items: center; gap: 5px; margin: 3px 0; }
+.bid-cohort-editor label > span { display: flex; min-width: 0; flex-direction: column; }
+.bid-cohort-editor label > span small { margin-top: 1px; color: #666 !important; font-size: 11px; font-style: italic; }
+.bid-cohort-editor-gang-types { display: block !important; align-self: start; min-height: 0 !important; }
+.bid-cohort-editor-gang-types label { align-items: flex-start; margin: 3px 0; }
+.bid-cohort-editor-gang-types input { margin-top: 2px !important; }
+.bid-cohort-editor-gang-types .bid-cohort-gang-type > span { display: grid !important; grid-template-columns: 1fr; gap: 1px; }
+.bid-cohort-editor-gang-types .bid-cohort-gang-type small { display: block; line-height: 1.15; }
+.bid-cohort-editor input[type="checkbox"], .bid-cohort-editor input[type="radio"] { flex: 0 0 15px; width: 15px; height: 15px; margin: 0; }
+.bid-cohort-editor input[type="text"], .bid-cohort-editor select, .bid-cohort-editor textarea { width: 100%; border: 1px solid #999 !important; border-radius: 0 !important; color: #242223 !important; background: #fff !important; background-image: none !important; }
+.bid-cohort-editor-name, .bid-cohort-editor-specialty > label, .bid-cohort-editor-description { display: grid !important; grid-template-columns: 125px minmax(0, 1fr); align-items: center; }
+.bid-cohort-editor-header-row { position: sticky; z-index: 20; top: 0; display: grid; grid-template-columns: 112px minmax(180px, 1fr) auto auto; align-items: center; column-gap: 10px; width: 100%; min-height: 54px; padding: 8px 10px; border: 1px solid #8d6f61; border-radius: 8px; background: #211f26; box-shadow: 0 3px 7px rgba(0,0,0,.35); }
+.bid-cohort-editor-name-label, .bid-cohort-editor-type-label { color: #eee6d6 !important; font-family: "Kirsty", Impact, sans-serif; line-height: 1.05; text-transform: uppercase; }
+.bid-cohort-editor-name-input { min-width: 0; height: 34px; }
+.bid-cohort-editor-type-label { margin-left: 6px; padding-left: 14px; border-left: 1px solid #8d6f61; white-space: nowrap; }
+.bid-cohort-editor-header-row .bid-cohort-editor-options { flex-wrap: nowrap; align-items: center; gap: 12px; }
+.bid-cohort-editor-header-row .bid-cohort-editor-options label { margin: 0; white-space: nowrap; }
+.bid-cohort-editor-name b, .bid-cohort-editor-specialty > label > b, .bid-cohort-editor-description b { font-family: "Kirsty", Impact, sans-serif; text-transform: uppercase; }
+.bid-cohort-editor-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 8px; }
+.bid-cohort-editor-options, .bid-cohort-editor-harm { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.bid-cohort-editor-description { align-items: start; }
+.bid-cohort-editor-description textarea { min-height: 85px; resize: vertical; }
+.bid-cohort-editor-specialty { align-self: start; width: 100%; min-height: 0; margin-top: 10px; padding: 8px; border: 1px solid #8d6f61; border-radius: 8px !important; background: #211f26 !important; background-image: none !important; }
+.bid-cohort-editor-specialty label > b, .bid-cohort-editor-power b, .bid-cohort-editor-power span, .bid-cohort-editor-power small { color: #eee6d6 !important; }
+.bid-cohort-editor-power { display: block; margin-top: 14px; padding-top: 12px; border-top: 1px solid #8d8b88; }
+.bid-cohort-editor-power b, .bid-cohort-editor-power span, .bid-cohort-editor-power small { display: block; }
+.bid-cohort-editor-power b { font-family: "Kirsty", Impact, sans-serif; text-transform: uppercase; }
+.bid-cohort-power-row { display: none; grid-template-columns: 65px minmax(0, 1fr) auto; align-items: center; gap: 7px; margin-top: 7px; padding: 6px; border: 1px solid #d69a3a; color: #eee6d6; background: #363139; }
+.bid-cohort-power-row.active { display: grid; }
+.bid-cohort-power-row strong { color: #eee6d6; font-family: "Kirsty", Impact, sans-serif; text-transform: uppercase; }
+.bid-cohort-power-row span { margin: 0; font-size: 12px; font-weight: bold; }
+.bid-cohort-power-row small { margin: 0; font-size: 11px; font-style: normal; opacity: .85; }
+.bid-cohort-editor-power > em { display: block; margin-top: 7px; color: #bdb6aa; font-size: 11px; }
+.bid-cohort-editor-elite { display: none !important; margin: 0 0 12px !important; padding: 9px; border: 1px solid #d69a3a; border-radius: 0 !important; background: #363139; }
+.bid-cohort-editor-elite.active { display: flex !important; }
+.bid-cohort-editor-elite span, .bid-cohort-editor-elite b { color: #eee6d6 !important; }
+.bid-cohort-editor-elite small { color: #c9c0b2 !important; }
+.bid-cohort-editor-delete { padding: 9px; border: 1px solid #8d2929; color: #5b1111 !important; background: #ead7d3; }
+.bid-cohort-editor-delete span, .bid-cohort-editor-delete b { color: #5b1111 !important; }
+.bid-cohort-editor-delete small { color: #7a3a34 !important; }
+
+.bid-crew-contacts-editor { display: grid; gap: 8px; padding: 10px; color: #242223; background: #e7e6e2; }
+.bid-crew-contact-edit-head, .bid-crew-contact-edit-row { display: grid; grid-template-columns: minmax(130px,.8fr) minmax(190px,1.2fr) 92px; align-items: center; gap: 6px; }
+.bid-crew-contact-edit-head { padding: 3px 5px; color: #fff; background: #242223; font-family: "Kirsty", Impact, sans-serif; text-transform: uppercase; }
+.bid-crew-contact-edit-head span { font-size: 10px; text-align: center; }
+.bid-crew-contact-edit-row input { min-width: 0; height: 30px; border: 1px solid #999; border-radius: 0; color: #242223; background: #fff; }
+.bid-crew-contact-edit-row { padding-bottom: 4px; border-bottom: 1px solid #aaa; }
+.bid-crew-contact-edit-row button { width: 26px; height: 26px; margin: 0 1px; padding: 0; }
+.bid-crew-contact-edit-row { grid-template-columns: minmax(130px,.8fr) minmax(190px,1.2fr) repeat(3,26px); }
+.bid-crew-contact-add { height: 32px; border: 1px solid #777; color: #242223; background: #f7f7f5; }
+.bid-cohort-delete-confirm { padding: 14px; color: #242223; background: #eeeae3; }
+.bid-cohort-delete-confirm p { margin: 5px 0; }

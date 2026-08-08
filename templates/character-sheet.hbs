@@ -1,0 +1,204 @@
+<form class="bid-sheet bid-playbook-{{bid.playbookSlug}}" data-playbook="{{bid.playbookSlug}}" autocomplete="off">
+  <div class="bid-sheet-grid">
+    <section class="bid-column bid-column-left">
+      <header class="bid-brand"><span>BLADES IN THE DARK</span><span class="bid-brand-actions"><button type="button" class="bid-notes-button" data-bid-action="notes-open" title="Notizen bearbeiten" aria-label="Notizen bearbeiten"><i class="fa-solid fa-pen-to-square"></i></button><button type="button" class="bid-edit-toggle" data-bid-action="edit-toggle">🔒 BEARBEITUNG GESPERRT</button></span></header>
+
+      <div class="bid-identity-grid">
+        <label class="bid-field bid-portrait-field">
+          <span>PORTRÄT</span>
+          <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}">
+        </label>
+        <label class="bid-field"><span>NAME</span><input class="bid-auto-fit-input bid-actor-name" name="name" value="{{name}}"></label>
+        <label class="bid-field"><span>DECKNAME</span><input class="bid-auto-fit-input" name="system.alias" value="{{system.alias}}"></label>
+        <label class="bid-field bid-wide"><span>HERKUNFT</span><input class="bid-auto-fit-input" name="system.heritage" value="{{system.heritage}}"></label>
+        <label class="bid-field bid-wide"><span>VORGESCHICHTE</span><input class="bid-auto-fit-input" name="system.background" value="{{system.background}}"></label>
+        <label class="bid-field bid-wide"><span>LASTER / VERSORGER</span><input class="bid-auto-fit-input" name="system.vice" value="{{system.vice}}"></label>
+      </div>
+
+      <div class="bid-split-track">
+        <div>
+          <h2 class="bid-bar">STRESS</h2>
+          <div class="bid-teeth">
+            {{#each bid.stress}}
+              <button type="button" class="bid-tooth {{#if active}}active{{/if}}" data-bid-action="track" data-path="system.stress.value" data-value="{{value}}" title="Stress {{value}}"></button>
+            {{/each}}
+          </div>
+        </div>
+        <div>
+          <h2 class="bid-bar">TRAUMA</h2>
+          <div class="bid-trauma-list">
+            {{#each bid.traumas}}
+              <button type="button" class="bid-trauma {{#if active}}active{{/if}}" data-bid-action="trauma" data-trauma="{{key}}">{{label}}</button>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+      <div class="bid-harm-row">
+        <section class="bid-harm">
+          <h2 class="bid-bar">SCHADEN</h2>
+          <label><b>3</b><input class="bid-auto-fit-input" name="system.harm.heavy.one" value="{{system.harm.heavy.one}}"><em>BRAUCHT HILFE</em></label>
+          <label><b>2</b><input class="bid-auto-fit-input" name="system.harm.medium.one" value="{{system.harm.medium.one}}"><input class="bid-auto-fit-input" name="system.harm.medium.two" value="{{system.harm.medium.two}}"><em>−1W</em></label>
+          <label><b>1</b><input class="bid-auto-fit-input" name="system.harm.light.one" value="{{system.harm.light.one}}"><input class="bid-auto-fit-input" name="system.harm.light.two" value="{{system.harm.light.two}}"><em>VERRINGERTE WIRKUNG</em></label>
+        </section>
+        <aside class="bid-recovery">
+          <h2 class="bid-bar">HEILUNG</h2>
+          <div class="bid-clock" aria-label="Heilungsuhr">
+            {{#each bid.healing}}
+              <button type="button" class="{{#if active}}active{{/if}}" data-bid-action="track" data-path="system.healing_clock.value" data-value="{{value}}">{{value}}</button>
+            {{/each}}
+          </div>
+          <div class="bid-armor-compact">
+            <h2 class="bid-bar">RÜSTUNG</h2>
+            <div>
+              <label title="Normale Rüstung"><input type="checkbox" data-bid-action="armor" data-path="system.armor-uses.armor" {{checked system.armor-uses.armor}}><span>Normal</span></label>
+              <label title="Schwere Rüstung"><input type="checkbox" data-bid-action="armor" data-path="system.armor-uses.heavy" {{checked system.armor-uses.heavy}}><span>Schwer</span></label>
+              <label title="Spezialrüstung"><input type="checkbox" data-bid-action="armor" data-path="system.armor-uses.special" {{checked system.armor-uses.special}}><span>Spezial</span></label>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="bid-left-inventory bid-gear">
+        <h2 class="bid-bar">INVENTAR <span class="bid-gear-total {{#if bid.overloaded}}overloaded{{/if}}">RESTLAST {{bid.loadRemaining}}</span></h2>
+        <section class="bid-standard-gear">
+          <h3>STANDARDGEGENSTÄNDE</h3>
+          <div class="bid-list">
+            {{#each bid.standardGear}}
+              <article class="bid-item item" data-item-id="{{_id}}" draggable="true">
+                <div class="bid-carry-units" title="Mitführen · Last {{load}}">
+                  {{#each carryBoxes}}<button type="button" class="bid-load-boxes {{#if active}}active{{/if}}" data-bid-action="gear-carry" data-value="{{value}}">{{#each ../loadBoxes}}<i></i>{{/each}}</button>{{/each}}
+                </div>
+                <span class="bid-item-name" title="{{description}}">{{name}}</span>
+              </article>
+            {{else}}<p class="bid-empty">Keine Standardgegenstände.</p>{{/each}}
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <section class="bid-column bid-column-center">
+      <header class="bid-playbook">
+        <button type="button" class="bid-playbook-select item-add-popup" data-item-type="class" data-distinct="true" title="Playbook auswählen oder wechseln">
+          {{bid.playbookLabel}}
+        </button>
+        <div class="bid-playbook-description">{{#if bid.playbook}}{{bid.playbookDescription}}{{else}}Playbook auswählen{{/if}}</div>
+      </header>
+
+      <section class="bid-section bid-abilities">
+        <h2 class="bid-bar">SONDERFÄHIGKEITEN <button type="button" class="item-add-popup" data-item-type="ability" title="Fähigkeit hinzufügen">＋</button></h2>
+        <div class="bid-list">
+          {{#each bid.abilities}}
+            <article class="bid-item item" data-item-id="{{_id}}" draggable="true">
+              <button type="button" class="bid-item-mark {{#if system.purchased}}active{{/if}}" data-bid-action="ability-toggle" title="Fähigkeit auswählen"></button>
+              <div data-bid-action="item-open"><strong>{{name}}</strong> {{description}}</div>
+              <button type="button" class="bid-hover-action" data-bid-action="item-delete" title="Löschen">×</button>
+            </article>
+          {{else}}
+            <p class="bid-empty">Fähigkeiten hierher ziehen oder mit ＋ hinzufügen.</p>
+          {{/each}}
+        </div>
+      </section>
+
+      <div class="bid-center-pair">
+        <section class="bid-section bid-contacts">
+          <h2 class="bid-bar">TÖDLICHE FREUNDE <span class="bid-heading-actions"><button type="button" data-bid-action="contacts-sync" title="Kontakte des Playbooks laden">↻</button><button type="button" data-bid-action="contact-add" title="Kontakt hinzufügen">＋</button></span></h2>
+          {{#each bid.contacts}}
+            <article class="bid-contact" data-contact-id="{{id}}" data-actor-uuid="{{actorUuid}}">
+              <span class="bid-standing-pair bid-standing-{{standing}}" aria-label="Beziehung: {{standing}}">
+                <button type="button" class="bid-standing-triangle bid-standing-friend" data-bid-action="contact-standing" data-standing="friend" title="Als Freund markieren">△</button>
+                <button type="button" class="bid-standing-triangle bid-standing-rival" data-bid-action="contact-standing" data-standing="rival" title="Als Feind markieren">▽</button>
+              </span>
+              {{#if img}}<img src="{{img}}" alt="">{{/if}}
+              <div class="bid-contact-fields" title="{{notes}}">
+                <span class="bid-contact-name">{{name}}</span>
+                <span class="bid-contact-role">{{role}}</span>
+              </div>
+              <div class="bid-contact-actions">
+                <button type="button" data-bid-action="contact-move" data-direction="-1" title="Nach oben">↑</button>
+                <button type="button" data-bid-action="contact-move" data-direction="1" title="Nach unten">↓</button>
+                <button type="button" data-bid-action="contact-actor" title="Actor öffnen">↗</button>
+                <button type="button" data-bid-action="contact-delete" title="Löschen">×</button>
+              </div>
+            </article>
+          {{else}}
+            <p class="bid-empty">Mit ＋ einen frei bearbeitbaren Kontakt anlegen.</p>
+          {{/each}}
+        </section>
+        <section class="bid-section bid-gear">
+          <h2 class="bid-bar">PLAYBOOK-GEGENSTÄNDE <span class="bid-gear-total {{#if bid.overloaded}}overloaded{{/if}}">RESTLAST {{bid.loadRemaining}}</span></h2>
+          <div class="bid-list">
+            {{#each bid.playbookGear}}
+              <article class="bid-item item" data-item-id="{{_id}}" draggable="true">
+                <div class="bid-carry-units" title="Mitführen · Last {{load}}">
+                  {{#each carryBoxes}}<button type="button" class="bid-load-boxes {{#if active}}active{{/if}}" data-bid-action="gear-carry" data-value="{{value}}">{{#each ../loadBoxes}}<i></i>{{/each}}</button>{{/each}}
+                </div>
+                <span class="bid-item-name" title="{{description}}">{{name}}</span>
+              </article>
+            {{else}}<p class="bid-empty">Keine Playbook-Gegenstände.</p>{{/each}}
+          </div>
+        </section>
+      </div>
+
+      <section class="bid-section bid-xp">
+        <h2 class="bid-bar">ERFAHRUNGSPUNKTE</h2>
+        {{#if bid.playbookClues}}
+          {{#each bid.playbookClues}}<p>◆ {{this}}</p>{{/each}}
+        {{else}}
+          <p class="bid-playbook-hint">◆ Playbook wählen, um dessen besonderen EP-Auslöser anzuzeigen.</p>
+        {{/if}}
+        <p>◆ Du hast Überzeugung, Herkunft oder Hintergrund deines Charakters ausgedrückt.</p>
+        <p>◆ Du hattest mit Auswirkungen deines Lasters oder deiner Traumata zu kämpfen.</p>
+      </section>
+
+      <footer class="bid-center-footer">
+        <section><h2>TEAMARBEIT</h2><p>Teammitglied <b>helfen</b></p><p><b>Gruppenaktion</b> anführen</p><p>Teammitglied <b>beschützen</b></p><p>Aktion <b>vorbereiten</b></p></section>
+        <section>
+          <h2>PLANUNG &amp; LAST</h2>
+          <p>Wählt einen Plan, nennt das <b>Detail</b> und legt die <b>Last</b> fest.</p>
+          <div class="bid-plan-details">
+            <span><b>Überfall:</b> <i>Angriffspunkt</i></span>
+            <span><b>Okkultismus:</b> <i>Methode</i></span>
+            <span><b>Täuschung:</b> <i>Methode</i></span>
+            <span><b>Gesellschaft:</b> <i>Verbindung</i></span>
+            <span><b>Heimlichkeit:</b> <i>Zugangspunkt</i></span>
+            <span><b>Transport:</b> <i>Route</i></span>
+          </div>
+          <div class="bid-load-choices">{{#each bid.loadChoices}}<button type="button" class="{{#if selected}}active{{/if}}" data-bid-action="load-level" data-value="{{value}}"><b>◇{{max}}</b> {{label}}</button>{{/each}}</div>
+        </section>
+      </footer>
+    </section>
+
+    <aside class="bid-column bid-column-right">
+      <section class="bid-wealth">
+        <div><h3>VERMÖGEN</h3><div class="bid-mini-track">{{#each bid.stash}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-action="track" data-path="system.coins_stashed" data-value="{{value}}"></button>{{/each}}</div></div>
+        <div><h3>MÜNZEN</h3><div class="bid-mini-track coins">{{#each bid.coins}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-action="track" data-path="system.coins" data-value="{{value}}"></button>{{/each}}</div></div>
+      </section>
+
+      <h2 class="bid-bar">CHARAKTERBUCH</h2>
+      <div class="bid-book-xp">{{#each bid.experience}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-action="track" data-path="system.experience" data-value="{{value}}" title="Charakterbuch-EP {{value}}"></button>{{/each}}</div>
+
+      <div class="bid-attributes">
+        {{#each bid.attributes}}
+          <section class="bid-attribute">
+            <h2 class="bid-bar"><button type="button" data-bid-action="roll" data-roll="{{key}}">{{label}}</button></h2>
+            <div class="bid-attribute-xp">{{#each experience}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-action="track" data-path="system.attributes.{{../key}}.exp" data-value="{{value}}" title="Attribut-EP {{value}}"></button>{{/each}}</div>
+            <div class="bid-skill-list">
+              {{#each skills}}
+                <div class="bid-skill">
+                  <div class="bid-dots">
+                    {{#each dots}}<button type="button" class="{{#if active}}active{{/if}}" data-bid-action="skill" data-path="system.attributes.{{../../key}}.skills.{{../key}}.value" data-value="{{value}}"></button>{{/each}}
+                  </div>
+                  <button type="button" class="bid-skill-name" data-bid-action="roll" data-roll="{{key}}">{{label}}</button>
+                </div>
+              {{/each}}
+            </div>
+          </section>
+        {{/each}}
+      </div>
+
+      <section class="bid-bonus"><h2>BONUSWÜRFEL</h2><p><b>＋ VERausgaben</b> (2 Stress)<br>– oder – <b>Teufelspakt annehmen</b></p></section>
+      <section class="bid-info"><h2>INFORMATIONEN SAMMELN</h2><ul><li>Was haben sie vor?</li><li>Wie bekomme ich sie dazu, [X] zu tun?</li><li>Was sind ihre wahren Gefühle?</li><li>Wo sind sie verwundbar?</li><li>Wo kann ich [X] finden?</li><li>Worum geht es hier wirklich?</li></ul></section>
+    </aside>
+  </div>
+</form>

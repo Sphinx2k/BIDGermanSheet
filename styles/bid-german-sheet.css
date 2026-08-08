@@ -1,0 +1,223 @@
+.bid-paper-sheet .window-content { padding: 0; background: #eee; overflow: hidden; }
+.bid-paper-sheet .bid-sheet { height: 100%; overflow: auto; color: #242223; background: #f7f7f5; font: 14px/1.15 "Crimson Text", Georgia, serif; }
+.bid-paper-sheet * { box-sizing: border-box; }
+.bid-paper-sheet button { border: 0; box-shadow: none; }
+.bid-paper-sheet input, .bid-paper-sheet textarea, .bid-paper-sheet select { border: 0; border-radius: 0; box-shadow: none; background: transparent; color: inherit; font: inherit; }
+.bid-paper-sheet input:focus, .bid-paper-sheet textarea:focus { background: #fff; outline: 1px solid #777; }
+.bid-paper-sheet .bid-sheet-grid { display: grid; grid-template-columns: minmax(530px, 1.05fr) minmax(520px, .95fr) minmax(245px, .48fr); min-width: 1295px; min-height: 100%; }
+.bid-paper-sheet .bid-column { display: block; min-width: 0; border-right: 1px solid #8a8a8a; }
+.bid-paper-sheet .bid-column-left { padding: 18px; }
+.bid-paper-sheet .bid-column-center { background: #dedfe0; }
+.bid-paper-sheet .bid-column-right { padding: 12px 13px; background: #fafafa; }
+.bid-paper-sheet .bid-brand, .bid-paper-sheet .bid-playbook-select { font-family: "Kirsty", Impact, fantasy; letter-spacing: -2px; }
+.bid-paper-sheet .bid-brand { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; font-size: 38px; line-height: 1; }
+.bid-paper-sheet .bid-edit-toggle { flex: 0 0 auto; width: auto; margin: 0; padding: 5px 8px; border: 1px solid #242223; background: #f7f7f5; font: 700 11px "Crimson Text", Georgia, serif; letter-spacing: 0; }
+.bid-paper-sheet .bid-brand-actions { display: flex; align-items: center; gap: 5px; }
+.bid-paper-sheet .bid-notes-button { width: 29px; height: 27px; margin: 0; padding: 2px; border: 1px solid #242223; background: #f7f7f5; font-size: 16px; }
+.bid-paper-sheet .bid-sheet.is-locked .bid-edit-toggle { color: #fff; background: #242223; }
+.bid-paper-sheet .bid-sheet.is-locked input:disabled, .bid-paper-sheet .bid-sheet.is-locked textarea:disabled, .bid-paper-sheet .bid-sheet.is-locked select:disabled { opacity: 1; color: #242223; cursor: default; }
+.bid-paper-sheet .bid-sheet.is-locked button:disabled:not(.bid-edit-toggle) { opacity: 1; cursor: default; }
+.bid-paper-sheet .bid-sheet.is-locked .profile-img { pointer-events: none; cursor: default; }
+.bid-paper-sheet .bid-bar, .bid-paper-sheet h2, .bid-paper-sheet h3 { margin: 0; font-family: "Kirsty", Impact, sans-serif; font-weight: 700; text-transform: uppercase; }
+.bid-paper-sheet .bid-bar { display: flex; align-items: center; justify-content: space-between; min-height: 22px; padding: 1px 5px; color: #fff; background: #242223; font-size: 16px; }
+.bid-paper-sheet .bid-bar button { width: auto; margin: 0; padding: 0 5px; color: inherit; background: transparent; font: inherit; }
+
+.bid-paper-sheet .bid-identity-grid { display: grid; grid-template-columns: 76px 1fr 1fr; gap: 8px 18px; }
+.bid-paper-sheet .bid-field { display: flex; flex-direction: column; min-height: 45px; border-bottom: 1px solid #aaa; }
+.bid-paper-sheet .bid-field span, .bid-paper-sheet .bid-notes span { font-family: "Kirsty", sans-serif; font-weight: 700; text-transform: uppercase; }
+.bid-paper-sheet .bid-field input { height: 26px; padding: 2px 0; }
+.bid-paper-sheet .bid-wide { grid-column: 2 / -1; }
+.bid-paper-sheet .bid-portrait-field { grid-row: 1 / span 3; height: 151px; border: 1px solid #aaa; }
+.bid-paper-sheet .bid-portrait-field span { padding: 2px 4px; }
+.bid-paper-sheet .profile-img { width: 100%; height: 128px; border: 0; object-fit: cover; filter: grayscale(1); }
+.bid-paper-sheet .bid-split-track { display: grid; grid-template-columns: 41% 59%; margin-top: 10px; border-bottom: 1px solid #aaa; }
+.bid-paper-sheet .bid-split-track > div + div { border-left: 3px solid #f7f7f5; }
+.bid-paper-sheet .bid-teeth { display: flex; height: 34px; }
+.bid-paper-sheet .bid-tooth { width: 25px; height: 32px; margin: 0 1px 0 0; padding: 0; clip-path: polygon(0 0,100% 0,100% 70%,50% 100%,0 70%); background: #d2d3d4; }
+.bid-paper-sheet .bid-tooth.active { background: #8b1818; }
+.bid-paper-sheet .bid-trauma-list { display: flex; flex-wrap: wrap; align-content: flex-start; min-height: 34px; padding: 3px 7px; gap: 1px 0; }
+.bid-paper-sheet .bid-trauma { width: auto; margin: 0; padding: 0 5px; border-right: 1px solid #aaa; background: transparent; font: 11px "Crimson Text", Georgia, serif; text-transform: uppercase; }
+.bid-paper-sheet .bid-trauma.active { color: #fff; background: #242223; }
+.bid-paper-sheet .bid-harm-row { display: grid; grid-template-columns: 1fr 130px; gap: 18px; margin-top: 8px; }
+.bid-paper-sheet .bid-harm { display: block; }
+.bid-paper-sheet .bid-harm label { display: grid; grid-template-columns: 22px minmax(0, 1fr) minmax(0, 1fr) 105px; min-height: 42px; margin: 0; border-bottom: 1px solid #777; }
+.bid-paper-sheet .bid-harm label:first-of-type input { grid-column: 2 / 4; }
+.bid-paper-sheet .bid-harm b { padding: 12px 5px; background: #d8d9da; }
+.bid-paper-sheet .bid-harm input { min-width: 0; padding: 5px; border-right: 1px solid #777; }
+.bid-paper-sheet .bid-harm em { display: grid; min-width: 0; place-items: center; padding: 2px; background: #d8d9da; font: bold 10px "Crimson Text", Georgia, serif; text-align: center; }
+.bid-paper-sheet .bid-clock { position: relative; width: 62px; height: 62px; margin: 5px auto 10px; overflow: hidden; border: 3px solid #242223; border-radius: 50%; background: #fff; }
+.bid-paper-sheet .bid-clock::before, .bid-paper-sheet .bid-clock::after { content: ""; position: absolute; z-index: 2; background: #242223; pointer-events: none; }
+.bid-paper-sheet .bid-clock::before { top: 0; bottom: 0; left: calc(50% - 1px); width: 2px; }
+.bid-paper-sheet .bid-clock::after { top: calc(50% - 1px); right: 0; left: 0; height: 2px; }
+.bid-paper-sheet .bid-clock button { position: absolute; width: 50%; height: 50%; margin: 0; padding: 0; border: 0; border-radius: 0; background: #fff; color: transparent; }
+.bid-paper-sheet .bid-clock button:nth-child(1) { top: 0; right: 0; }
+.bid-paper-sheet .bid-clock button:nth-child(2) { right: 0; bottom: 0; }
+.bid-paper-sheet .bid-clock button:nth-child(3) { bottom: 0; left: 0; }
+.bid-paper-sheet .bid-clock button:nth-child(4) { top: 0; left: 0; }
+.bid-paper-sheet .bid-clock button.active { background: #242223; }
+.bid-paper-sheet .bid-armor-compact { display: block; margin-top: 4px; }
+.bid-paper-sheet .bid-armor-compact .bid-bar { width: 100%; height: 22px; font-size: 13px; }
+.bid-paper-sheet .bid-armor-compact > div { display: grid; grid-template-columns: repeat(3, 1fr); align-items: start; min-width: 0; padding-top: 3px; }
+.bid-paper-sheet .bid-armor-compact label { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; margin: 0; font-size: 9px; line-height: 1; text-transform: uppercase; }
+.bid-paper-sheet .bid-armor-compact input { width: 13px; height: 13px; margin: 0; }
+.bid-paper-sheet .bid-left-inventory { margin-top: 14px; }
+.bid-paper-sheet .bid-left-inventory h3 { padding: 3px 5px; border-bottom: 1px solid #8b1818; font-size: 13px; }
+.bid-paper-sheet .bid-left-inventory .bid-standard-gear .bid-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; padding: 3px 5px; }
+.bid-paper-sheet .bid-left-inventory .bid-item { display: grid; grid-template-columns: 52px minmax(0, 1fr); align-items: center; min-height: 27px; padding: 2px 0; gap: 4px; font-size: 16px; }
+.bid-paper-sheet .bid-left-inventory .bid-carry-units { justify-self: start; }
+.bid-paper-sheet .bid-left-inventory span.bid-item-name { display: block; justify-self: stretch; width: 100%; font-size: 17px; line-height: 1.15; text-align: left !important; }
+
+.bid-paper-sheet .bid-playbook { display: grid; grid-template-columns: 1fr 175px; height: 106px; min-height: 0; padding: 9px 15px 4px; overflow: hidden; }
+.bid-paper-sheet .bid-playbook-select { width: 100%; height: 58px; margin: 0; padding: 0; overflow: hidden; border: 0; background: transparent; font-size: 47px; line-height: 1; text-align: left; text-transform: uppercase; white-space: nowrap; text-overflow: ellipsis; }
+.bid-paper-sheet .bid-playbook-select:hover { color: #000; background: rgba(255,255,255,.35); }
+.bid-paper-sheet .bid-playbook-description { align-self: center; max-height: 82px; overflow: auto; color: #666; font-family: Georgia, serif; font-weight: bold; text-align: right; }
+.bid-paper-sheet .bid-playbook-description p { margin: 2px 0; }
+.bid-paper-sheet .bid-heading-actions { display: flex; margin-left: auto; }
+.bid-paper-sheet .bid-heading-actions button { min-width: 23px; }
+.bid-paper-sheet .bid-section { border-bottom: 1px solid #999; }
+.bid-paper-sheet .bid-list { padding: 5px 8px; }
+.bid-paper-sheet .bid-abilities .bid-list { height: 247px; min-height: 0; overflow-y: auto; background: #eee; }
+.bid-paper-sheet .bid-item { position: relative; display: flex; align-items: flex-start; gap: 5px; min-height: 25px; padding: 3px 2px; }
+.bid-paper-sheet .bid-item-mark { flex: 0 0 14px; width: 14px; height: 14px; margin: 2px 0 0; padding: 0; border: 2px solid #aaa; border-radius: 50%; background: #fff; }
+.bid-paper-sheet .bid-item-mark.active { border-color: #242223; background: #242223; }
+.bid-paper-sheet .bid-item p { display: inline; margin: 0; }
+.bid-paper-sheet .bid-hover-action { visibility: hidden; width: 20px; margin-left: auto; padding: 0; background: transparent; }
+.bid-paper-sheet .bid-item:hover .bid-hover-action, .bid-paper-sheet .bid-contact:hover .bid-contact-actions { visibility: visible; }
+.bid-paper-sheet .bid-empty { margin: 8px; color: #777; font-style: italic; }
+.bid-paper-sheet .bid-center-pair { display: grid; grid-template-columns: 1fr 1fr; height: 190px; overflow: hidden; }
+.bid-paper-sheet .bid-center-pair > section:first-child { border-right: 0; }
+.bid-paper-sheet .bid-center-pair .bid-gear { order: 1; border-right: 1px solid #999; }
+.bid-paper-sheet .bid-center-pair .bid-gear { display: block; }
+.bid-paper-sheet .bid-center-pair .bid-gear .bid-list { display: block; height: auto; margin: 0; padding: 5px 8px; }
+.bid-paper-sheet .bid-center-pair .bid-contacts { order: 2; }
+.bid-paper-sheet .bid-contacts { display: block; padding-bottom: 30px; overflow-y: auto; scroll-padding-bottom: 30px; }
+.bid-paper-sheet .bid-contact { display: grid; grid-template-columns: 28px 26px 1fr auto; align-items: center; gap: 3px; min-height: 28px; padding: 0 6px; }
+.bid-paper-sheet .bid-contact img { width: 24px; height: 24px; border: 0; border-radius: 50%; object-fit: cover; filter: grayscale(1); }
+.bid-paper-sheet .bid-standing-pair { display: flex; align-items: center; gap: 0; width: 30px; }
+.bid-paper-sheet .bid-standing-triangle { width: 15px; height: 22px; margin: 0; padding: 0; border: 0; background: transparent; color: #999; font: 18px/20px Georgia, serif; }
+.bid-paper-sheet .bid-standing-triangle:hover { color: #242223; text-shadow: none; }
+.bid-paper-sheet .bid-standing-pair.bid-standing-friend .bid-standing-friend,
+.bid-paper-sheet .bid-standing-pair.bid-standing-rival .bid-standing-rival { color: #242223; font-weight: 900; }
+.bid-paper-sheet .bid-standing-pair.bid-standing-friend .bid-standing-friend { font-size: 0; }
+.bid-paper-sheet .bid-standing-pair.bid-standing-friend .bid-standing-friend::after { content: "▲"; font-size: 16px; }
+.bid-paper-sheet .bid-standing-pair.bid-standing-rival .bid-standing-rival { font-size: 0; }
+.bid-paper-sheet .bid-standing-pair.bid-standing-rival .bid-standing-rival::after { content: "▼"; font-size: 16px; }
+.bid-paper-sheet .bid-contact-fields { display: grid; grid-template-columns: 1fr 1fr; }
+.bid-paper-sheet .bid-contact-fields span { min-width: 0; padding: 0 2px; overflow: hidden; font-size: 12px; line-height: 18px; text-overflow: ellipsis; white-space: nowrap; }
+.bid-paper-sheet .bid-contact-name { font-weight: 600; }
+.bid-paper-sheet .bid-contact-actions { visibility: hidden; display: flex; }
+.bid-paper-sheet .bid-contact-actions button { width: 19px; margin: 0; padding: 0; background: transparent; }
+.bid-paper-sheet .bid-sheet.is-locked .bid-contact { grid-template-columns: 30px 32px minmax(0, 1fr); }
+.bid-paper-sheet .bid-sheet.is-locked .bid-contact-actions { display: none; }
+.bid-paper-sheet .bid-sheet.is-locked .bid-contact-fields { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); }
+.bid-paper-sheet .bid-gear .bid-list { min-height: 0; overflow: visible; }
+.bid-paper-sheet .bid-gear-total { margin-left: auto; padding: 0 6px; font: 700 11px "Crimson Text", Georgia, serif; }
+.bid-paper-sheet .bid-gear-total.overloaded { color: #d71920; background: #fff; }
+.bid-paper-sheet .bid-carry-boxes { display: flex; flex: 0 0 auto; gap: 2px; padding-top: 1px; }
+.bid-paper-sheet .bid-carry-boxes button { width: 14px; height: 14px; margin: 0; padding: 0; border: 1px solid #242223; border-radius: 0; background: #fff; }
+.bid-paper-sheet .bid-carry-boxes button.active { background: #242223; }
+.bid-paper-sheet .bid-item-name { width: auto; margin: 0; padding: 0; background: transparent; text-align: left; }
+.bid-paper-sheet span.bid-item-name { display: block; min-width: 0; width: 100%; cursor: help; font-size: 13px; line-height: 1.15; text-align: left; }
+.bid-paper-sheet .bid-center-pair .bid-gear .bid-item { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; min-height: 25px; gap: 3px; }
+.bid-paper-sheet .bid-center-pair .bid-gear .bid-carry-units { justify-self: start; }
+.bid-paper-sheet .bid-load { display: grid; flex: 0 0 18px; place-items: center; width: 18px; height: 18px; margin-left: auto; border: 1px solid #777; font-weight: bold; }
+.bid-paper-sheet .bid-carry-units { display: flex; flex: 0 0 auto; align-items: center; gap: 3px; padding-top: 1px; }
+.bid-paper-sheet .bid-load-boxes { position: relative; display: flex; flex: 0 0 auto; align-items: center; gap: 4px; width: auto; min-width: 0; height: 16px; margin: 0; padding: 1px; outline: 0; background: transparent; line-height: 1; }
+.bid-paper-sheet .bid-load-boxes:focus, .bid-paper-sheet .bid-load-boxes:focus-visible { outline: 0; box-shadow: none; }
+.bid-paper-sheet .bid-load-boxes::before { content: ""; position: absolute; top: calc(50% - 1px); right: 6px; left: 6px; height: 2px; background: #242223; }
+.bid-paper-sheet .bid-load-boxes i { position: relative; z-index: 1; display: block; width: 12px; height: 12px; border: 1px solid #242223; background: #fff; }
+.bid-paper-sheet .bid-load-boxes.active i { background: #242223; }
+.bid-paper-sheet .bid-xp { height: 118px; padding: 3px 0 4px; overflow-y: auto; }
+.bid-paper-sheet .bid-xp p { margin: 4px 8px; font-family: Georgia, serif; font-size: 12px; font-style: italic; }
+.bid-paper-sheet .bid-box-track, .bid-paper-sheet .bid-mini-track, .bid-paper-sheet .bid-book-xp, .bid-paper-sheet .bid-attribute-xp { display: flex; gap: 2px; padding: 5px 8px; }
+.bid-paper-sheet .bid-box-track button, .bid-paper-sheet .bid-mini-track button, .bid-paper-sheet .bid-book-xp button, .bid-paper-sheet .bid-attribute-xp button { width: 12px; height: 12px; margin: 0; padding: 0; border: 1px solid #aaa; border-radius: 0; background: #fff; }
+.bid-paper-sheet .bid-box-track .active, .bid-paper-sheet .bid-mini-track .active, .bid-paper-sheet .bid-book-xp .active, .bid-paper-sheet .bid-attribute-xp .active { background: #242223; }
+.bid-paper-sheet .bid-center-footer { display: grid; grid-template-columns: 1fr 1.5fr; min-height: 151px; background: #fafafa; }
+.bid-paper-sheet .bid-center-footer section { padding: 8px; border-right: 1px solid #999; }
+.bid-paper-sheet .bid-center-footer h2 { font-size: 16px; }
+.bid-paper-sheet .bid-center-footer p { margin: 5px 0; padding: 4px; background: #ddd; }
+.bid-paper-sheet .bid-plan-details { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 6px; }
+.bid-paper-sheet .bid-plan-details span { min-width: 0; padding: 3px 5px; overflow-wrap: anywhere; background: #ddd; font-family: Georgia, serif; font-size: 11px; line-height: 1.1; white-space: normal; }
+.bid-paper-sheet .bid-plan-details i { font-weight: normal; }
+.bid-paper-sheet .bid-load-choices { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; }
+.bid-paper-sheet .bid-load-choices button { width: auto; margin: 0; padding: 4px 6px; border: 1px solid #aaa; border-radius: 0; background: #eee; font-family: "Crimson Text", Georgia, serif; text-transform: uppercase; }
+.bid-paper-sheet .bid-load-choices button.active { color: #fff; background: #242223; }
+.bid-paper-sheet .bid-load-choices button b { font-family: "Kirsty", Impact, sans-serif; }
+
+.bid-paper-sheet .bid-wealth { display: grid; grid-template-columns: 1fr; gap: 5px; }
+.bid-paper-sheet .bid-wealth h3 { font-size: 12px; }
+.bid-paper-sheet .bid-mini-track { display: grid; grid-template-columns: repeat(10, 10px); gap: 3px; padding: 3px 0 8px; }
+.bid-paper-sheet .bid-mini-track.coins { grid-template-columns: repeat(4, 12px); }
+.bid-paper-sheet .bid-mini-track button { width: 10px; height: 10px; }
+.bid-paper-sheet .bid-book-xp { padding: 3px 0 10px; }
+.bid-paper-sheet .bid-book-xp button { position: relative; width: 19px; overflow: hidden; border: 0; background: #999; clip-path: polygon(0 0,100% 0,100% 70%,50% 100%,0 70%); }
+.bid-paper-sheet .bid-book-xp button::after { content: ""; position: absolute; inset: 1px; background: #fff; clip-path: polygon(0 0,100% 0,100% 67%,50% 100%,0 67%); }
+.bid-paper-sheet .bid-book-xp button.active { background: #242223; }
+.bid-paper-sheet .bid-book-xp button.active::after { background: #242223; }
+.bid-paper-sheet .bid-attributes { position: relative; }
+.bid-paper-sheet .bid-attribute { margin-top: 7px; }
+.bid-paper-sheet .bid-attribute .bid-bar button { width: 100%; text-align: left; }
+.bid-paper-sheet .bid-attribute-xp { padding: 2px 0; }
+.bid-paper-sheet .bid-attribute-xp button { width: 18px; height: 8px; }
+.bid-paper-sheet .bid-skill-list { position: relative; }
+.bid-paper-sheet .bid-skill-list::after { content: ""; position: absolute; z-index: 2; top: 0; bottom: 0; left: 15px; width: 1px; background: #8f8f8f; pointer-events: none; }
+.bid-paper-sheet .bid-skill { display: grid; grid-template-columns: 75px 1fr; align-items: center; min-height: 25px; }
+.bid-paper-sheet .bid-dots { position: relative; z-index: 3; display: flex; gap: 6px; }
+.bid-paper-sheet .bid-dots button { width: 13px; height: 13px; margin: 0; padding: 0; border-radius: 50%; background: #d2d3d4; }
+.bid-paper-sheet .bid-dots button.active { background: #242223; }
+.bid-paper-sheet .bid-skill-name { width: auto; margin: 0; padding: 0 4px; background: transparent; font-family: Georgia, serif; text-align: left; text-transform: uppercase; }
+.bid-paper-sheet .bid-bonus { margin: 12px 0; }
+.bid-paper-sheet .bid-bonus h2, .bid-paper-sheet .bid-load-summary h2, .bid-paper-sheet .bid-standard-gear h2, .bid-paper-sheet .bid-info h2 { font-size: 16px; }
+.bid-paper-sheet .bid-bonus p { padding: 8px; color: #fff; background: #242223; font-size: 11px; text-transform: uppercase; }
+.bid-paper-sheet .bid-load-summary { display: grid; grid-template-columns: auto 1fr; align-items: end; column-gap: 9px; padding: 8px 0; border-top: 1px solid #999; border-bottom: 1px solid #999; }
+.bid-paper-sheet .bid-load-summary h2 { grid-column: 1 / -1; }
+.bid-paper-sheet .bid-load-summary strong { font-size: 26px; }
+.bid-paper-sheet .bid-load-summary span { padding-bottom: 3px; font-weight: bold; text-transform: uppercase; }
+.bid-paper-sheet .bid-load-summary.overloaded strong, .bid-paper-sheet .bid-load-summary.overloaded > span { color: #8b1818; }
+.bid-paper-sheet .bid-standard-gear { margin-top: 0; }
+.bid-paper-sheet .bid-standard-gear h2 { border-bottom: 1px solid #8b1818; }
+.bid-paper-sheet .bid-standard-gear .bid-list { display: grid; grid-template-columns: 1fr; }
+.bid-paper-sheet .bid-standard-gear .bid-item { min-height: 18px; padding: 1px 0; gap: 3px; font-size: 11px; }
+.bid-paper-sheet .bid-standard-gear .bid-carry-units { padding-top: 0; }
+.bid-paper-sheet .bid-standard-gear .bid-load-boxes { height: 14px; }
+.bid-paper-sheet .bid-standard-gear .bid-load-boxes i { width: 11px; height: 11px; }
+.bid-paper-sheet .bid-standard-gear .bid-hover-action { height: 16px; line-height: 12px; }
+.bid-paper-sheet .bid-info { margin-top: 12px; font-family: Georgia, serif; font-size: 12px; font-style: italic; }
+.bid-paper-sheet .bid-info ul { padding-left: 18px; }
+
+@media (max-width: 1350px) {
+  .bid-paper-sheet .bid-sheet-grid { grid-template-columns: 520px 520px 245px; }
+}
+
+.bid-playbook-dialog { display: grid; gap: 5px; max-height: 560px; overflow-y: auto; }
+.bid-playbook-choice { display: grid; grid-template-columns: 22px 145px 1fr; align-items: center; gap: 7px; padding: 7px; border-bottom: 1px solid #aaa; }
+.bid-playbook-choice:hover { background: rgba(0,0,0,.06); }
+.bid-playbook-choice input { width: 16px; height: 16px; }
+.bid-playbook-choice span { display: flex; flex-direction: column; }
+.bid-playbook-choice b { font-family: "Kirsty", Impact, sans-serif; font-size: 18px; text-transform: uppercase; }
+.bid-playbook-choice small { color: #777; }
+.bid-playbook-choice em { color: #555; font-family: "Crimson Text", Georgia, serif; }
+.application:has(.bid-ability-dialog),
+.window-app.dialog:has(.bid-ability-dialog),
+dialog:has(.bid-ability-dialog) { width: min(620px, 65vw) !important; max-width: min(620px, 65vw) !important; }
+.bid-ability-dialog { display: block; width: 100%; min-width: 0; padding: 7px; overflow: hidden; color: #242223; background: #f2f1ed; }
+.bid-ability-scroll { display: block; height: min(360px, 52vh); padding-right: 3px; overflow-x: hidden !important; overflow-y: scroll !important; scrollbar-gutter: stable; }
+.bid-ability-scroll::-webkit-scrollbar { display: block; width: 14px; }
+.bid-ability-scroll::-webkit-scrollbar-track { background: #d7d6d2; }
+.bid-ability-scroll::-webkit-scrollbar-thumb { min-height: 35px; border: 2px solid #d7d6d2; background: #555; }
+.bid-ability-count { margin: -7px -7px 4px; padding: 7px 10px; color: #fff; background: #242223; font-weight: bold; }
+.bid-ability-group { margin: 7px 0 0; padding: 4px 8px; color: #fff; background: #555; font-family: "Kirsty", Impact, sans-serif; font-size: 16px; text-transform: uppercase; }
+.bid-ability-choice { display: grid; grid-template-columns: 20px 165px minmax(0, 1fr); align-items: start; gap: 6px; min-width: 0; padding: 6px 5px; border-bottom: 1px solid #aaa; color: #242223; background: #f2f1ed; }
+.bid-ability-choice:hover { background: #deddd9; }
+.bid-ability-choice input { width: 16px; height: 16px; margin-top: 2px; }
+.bid-ability-choice span { display: flex; min-width: 0; flex-direction: column; }
+.bid-ability-choice b { overflow-wrap: break-word; font-family: "Kirsty", Impact, sans-serif; font-size: 15px; line-height: 1.05; text-transform: uppercase; white-space: normal; }
+.bid-ability-choice em { min-width: 0; overflow-wrap: anywhere; color: #3f3d3c; font-family: "Crimson Text", Georgia, serif; line-height: 1.2; }
+.bid-notes-dialog textarea { width: 100%; min-height: 360px; resize: vertical; font-family: Georgia, serif; }
+.bid-contact-dialog { display: grid; gap: 8px; }
+.bid-contact-dialog-row { display: grid; grid-template-columns: 125px minmax(0, 1fr); align-items: center; gap: 10px; }
+.bid-contact-dialog-row label { margin: 0; font-weight: bold; white-space: nowrap; }
+.bid-contact-dialog-row input, .bid-contact-dialog-row textarea { width: 100%; min-width: 0; margin: 0; }
+.bid-contact-dialog-notes { align-items: start; }
+.bid-contact-dialog-notes label { padding-top: 5px; }
+.bid-contact-dialog-notes textarea { min-height: 100px; resize: vertical; }
