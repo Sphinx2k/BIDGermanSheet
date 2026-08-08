@@ -12,20 +12,25 @@ Ich habe beim Charakterbogen das Feld für entfernt. Da die meisten Spieler ihre
 Das Modul übersetzt auch alle englischen Begriffe in die entsprechende Deutsche Version. Was evtl. das Übersetzungsmodul überflüssig macht (werde ich selbst noch testen)
 
 ## Screenshots
-<img width="1483" height="921" alt="grafik" src="https://github.com/user-attachments/assets/8c1dcb47-48d6-4e5c-8b6d-10f646b1344b" />
-<img width="1502" height="913" alt="grafik" src="https://github.com/user-attachments/assets/34903f1f-904f-406b-ac37-054eeb2eaf22" />
+<img width="1481" height="918" alt="grafik" src="https://github.com/user-attachments/assets/e5bfd8bd-47b8-46e8-a2fc-121a47e15db2" />
+
+<img width="1497" height="896" alt="grafik" src="https://github.com/user-attachments/assets/ee4743ce-1aaa-4e21-aa52-18586c728d77" />
+
+
 
 
 
 ## Benutzung
 1. Modul Installieren und aktivieren
 2. Beim Charakter oder Crew Blatt oben rechts das Zahnrad anklicken
-<img width="316" height="120" alt="grafik" src="https://github.com/user-attachments/assets/7eb663f9-d338-4627-b5e5-c40a7b7a7941" />
+<img width="290" height="131" alt="grafik" src="https://github.com/user-attachments/assets/83871f9c-4525-4a03-ae4a-6fb210deea58" />
+
 
 
 Im dialog den Deutschen Papierbogen bzw. Deutschen Papierbogen (Crew) auswählen.
 
 Beim leeren Blatt oder wenn schon mal etwas ausgewählt wurde kann man mit einem Klick hier
-<img width="1501" height="230" alt="grafik" src="https://github.com/user-attachments/assets/244f062e-2408-4a4c-98e4-b6f23c381185" />
+<img width="811" height="165" alt="grafik" src="https://github.com/user-attachments/assets/b336ba63-2666-47ca-80ae-b98b27260672" />
+
 
 Den Auswahldialog öffnen für Playbook für Charakter oder Crew. 
